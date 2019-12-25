@@ -1,0 +1,145 @@
+\babel@toc {ngerman}{}
+\contentsline {paragraph}{\nonumberline Lizenz}{1}{section*.1}
+\contentsline {section}{\numberline {1}Big Oh Laufzeitverhalten}{6}{section.1}
+\contentsline {subsection}{\numberline {1.1}Laufzeiten}{6}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Summenformel}{6}{subsection.1.2}
+\contentsline {paragraph}{\nonumberline n Iterationen}{6}{section*.3}
+\contentsline {subsection}{\numberline {1.3}n - 1 Iterationen}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Stirling Formel}{6}{subsection.1.4}
+\contentsline {section}{\numberline {2}\IeC {\"U}bersicht Datenstrukturen}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Sortier- und Suchalgorithmen}{7}{subsection.2.1}
+\contentsline {section}{\numberline {3}Multimaps}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Operationen}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Geordnete Multimap}{8}{subsection.3.2}
+\contentsline {section}{\numberline {4}B\IeC {\"a}ume}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Terminologie}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Traversierung}{9}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Laufzeit}{10}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Implementierungen}{10}{subsubsection.4.2.2}
+\contentsline {section}{\numberline {5}BST: Bin\IeC {\"a}re Such B\IeC {\"a}ume}{11}{section.5}
+\contentsline {subsection}{\numberline {5.1}Speicherplatz, Laufzeiten}{11}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Bin\IeC {\"a}re Suche}{12}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Operationen}{13}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Bin\IeC {\"a}re Sortierung}{16}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Speicherverbrauch}{16}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Implementierungen}{17}{subsection.5.6}
+\contentsline {section}{\numberline {6}AVL Tree}{21}{section.6}
+\contentsline {subsection}{\numberline {6.1}Laufzeiten}{21}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Operationen}{22}{subsection.6.2}
+\contentsline {paragraph}{\nonumberline insert()}{22}{section*.4}
+\contentsline {paragraph}{\nonumberline remove()}{24}{section*.5}
+\contentsline {subsection}{\numberline {6.3}Rotationen / Trinode Umstrukturierung}{25}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}Rechts rotieren (einfach)}{25}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}Links rotieren (einfach)}{26}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}Rechts/Links Doppelrotation}{27}{subsubsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.4}Links/Rechts Doppelrotation}{28}{subsubsection.6.3.4}
+\contentsline {subsection}{\numberline {6.4}Cut/Link Restrukturierung}{29}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Implementierung}{30}{subsection.6.5}
+\contentsline {section}{\numberline {7}Splay Tree}{34}{section.7}
+\contentsline {subsection}{\numberline {7.1}Varianten}{34}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Vorgehen}{35}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Remove}{35}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Splaying}{36}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Laufzeiten}{36}{subsection.7.5}
+\contentsline {section}{\numberline {8}Sortieralgorithmen}{37}{section.8}
+\contentsline {subsection}{\numberline {8.1}Eigenschaften}{37}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Varianten}{37}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Laufzeiten}{37}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Lexikographische Sortierung}{38}{subsection.8.4}
+\contentsline {section}{\numberline {9}Bubble Sort}{39}{section.9}
+\contentsline {subsection}{\numberline {9.1}Laufzeiten}{39}{subsection.9.1}
+\contentsline {section}{\numberline {10}Merge Sort}{40}{section.10}
+\contentsline {subsection}{\numberline {10.1}Laufzeiten}{40}{subsection.10.1}
+\contentsline {section}{\numberline {11}Quick Sort}{43}{section.11}
+\contentsline {subsection}{\numberline {11.1}Laufzeiten}{44}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}In Place Implementierung}{44}{subsection.11.2}
+\contentsline {section}{\numberline {12}Bucket Sort}{47}{section.12}
+\contentsline {subsection}{\numberline {12.1}Laufzeiten}{48}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Implementierung}{48}{subsection.12.2}
+\contentsline {section}{\numberline {13}Radix Sort}{49}{section.13}
+\contentsline {subsection}{\numberline {13.1}Laufzeiten}{49}{subsection.13.1}
+\contentsline {subsection}{\numberline {13.2}Radix Sort Algorithmen}{49}{subsection.13.2}
+\contentsline {subsection}{\numberline {13.3}Beispiel}{50}{subsection.13.3}
+\contentsline {subsection}{\numberline {13.4}Implementierung}{51}{subsection.13.4}
+\contentsline {section}{\numberline {14}Pattern Matching}{52}{section.14}
+\contentsline {subsection}{\numberline {14.1}Laufzeiten}{52}{subsection.14.1}
+\contentsline {subsection}{\numberline {14.2}Brute Force Algorithmus}{52}{subsection.14.2}
+\contentsline {subsection}{\numberline {14.3}Boyer-Moore Algorithmus}{53}{subsection.14.3}
+\contentsline {subsubsection}{\numberline {14.3.1}Last Occurence Funktion}{53}{subsubsection.14.3.1}
+\contentsline {subsubsection}{\numberline {14.3.2}Vorgehen}{54}{subsubsection.14.3.2}
+\contentsline {subsubsection}{\numberline {14.3.3}Algorithmus}{55}{subsubsection.14.3.3}
+\contentsline {subsubsection}{\numberline {14.3.4}Implementierung}{56}{subsubsection.14.3.4}
+\contentsline {subsection}{\numberline {14.4}KMP: Knuth-Morris-Pratt Algorithmus}{57}{subsection.14.4}
+\contentsline {subsubsection}{\numberline {14.4.1}Fehl-Funktion}{57}{subsubsection.14.4.1}
+\contentsline {subsubsection}{\numberline {14.4.2}Vorgehen}{58}{subsubsection.14.4.2}
+\contentsline {subsubsection}{\numberline {14.4.3}Algorithmus}{59}{subsubsection.14.4.3}
+\contentsline {subsubsection}{\numberline {14.4.4}Implementierung}{60}{subsubsection.14.4.4}
+\contentsline {section}{\numberline {15}Tries}{61}{section.15}
+\contentsline {subsection}{\numberline {15.1}Standard Trie}{61}{subsection.15.1}
+\contentsline {subsubsection}{\numberline {15.1.1}Vorgehen}{61}{subsubsection.15.1.1}
+\contentsline {subsection}{\numberline {15.2}Komprimierter Trie}{62}{subsection.15.2}
+\contentsline {subsection}{\numberline {15.3}Suffix Trie}{62}{subsection.15.3}
+\contentsline {subsection}{\numberline {15.4}Laufzeitverhalten / Speicherplatz}{63}{subsection.15.4}
+\contentsline {subsection}{\numberline {15.5}Implementierung}{63}{subsection.15.5}
+\contentsline {section}{\numberline {16}Dynamische Programmierung}{66}{section.16}
+\contentsline {subsection}{\numberline {16.1}Rucksack Problem}{66}{subsection.16.1}
+\contentsline {subsection}{\numberline {16.2}Voraussetzung Subprobleme}{66}{subsection.16.2}
+\contentsline {subsection}{\numberline {16.3}Subsequenzen}{67}{subsection.16.3}
+\contentsline {subsection}{\numberline {16.4}LCS: Longest Common Subsequence}{67}{subsection.16.4}
+\contentsline {subsection}{\numberline {16.5}Vorgehen}{68}{subsection.16.5}
+\contentsline {paragraph}{\nonumberline Tabelle Aufbauen}{68}{section*.6}
+\contentsline {paragraph}{\nonumberline L\IeC {\"o}sungen finden}{68}{section*.7}
+\contentsline {subsubsection}{\numberline {16.5.1}Implementierung}{69}{subsubsection.16.5.1}
+\contentsline {section}{\numberline {17}Graphen}{70}{section.17}
+\contentsline {subsection}{\numberline {17.1}Terminologie}{70}{subsection.17.1}
+\contentsline {subsubsection}{\numberline {17.1.1}Subgraphen}{71}{subsubsection.17.1.1}
+\contentsline {subsubsection}{\numberline {17.1.2}Tree und Forest}{71}{subsubsection.17.1.2}
+\contentsline {subsubsection}{\numberline {17.1.3}Pfad und Zyklen}{71}{subsubsection.17.1.3}
+\contentsline {subsection}{\numberline {17.2}Kanten-Listen Struktur}{72}{subsection.17.2}
+\contentsline {subsubsection}{\numberline {17.2.1}Kanten-Listen Struktur Implementierung}{73}{subsubsection.17.2.1}
+\contentsline {subsection}{\numberline {17.3}Adjazenz-Listen Struktur}{74}{subsection.17.3}
+\contentsline {subsection}{\numberline {17.4}Adjazenz-Matrix Struktur}{74}{subsection.17.4}
+\contentsline {subsection}{\numberline {17.5}Laufzeiten}{74}{subsection.17.5}
+\contentsline {subsection}{\numberline {17.6}Implementierung}{75}{subsection.17.6}
+\contentsline {section}{\numberline {18}DFS und BFS}{79}{section.18}
+\contentsline {subsection}{\numberline {18.1}DFS: Depth First Search}{79}{subsection.18.1}
+\contentsline {subsection}{\numberline {18.2}Implementierung DFS}{81}{subsection.18.2}
+\contentsline {subsection}{\numberline {18.3}BFS: Breadth First Search}{82}{subsection.18.3}
+\contentsline {subsection}{\numberline {18.4}DFS vs. BFS}{84}{subsection.18.4}
+\contentsline {section}{\numberline {19}Gerichtete Graphen (Directed Graphs, Digraph)}{85}{section.19}
+\contentsline {subsection}{\numberline {19.1}Scheduling}{85}{subsection.19.1}
+\contentsline {subsection}{\numberline {19.2}Laufzeiten}{85}{subsection.19.2}
+\contentsline {subsection}{\numberline {19.3}Strong Connectivity}{85}{subsection.19.3}
+\contentsline {subsection}{\numberline {19.4}DFS und BFS}{86}{subsection.19.4}
+\contentsline {subsection}{\numberline {19.5}Transitiver Abschluss}{87}{subsection.19.5}
+\contentsline {subsection}{\numberline {19.6}Floyd-Warshalls Algorithmus}{88}{subsection.19.6}
+\contentsline {subsubsection}{\numberline {19.6.1}Vorgehen}{88}{subsubsection.19.6.1}
+\contentsline {subsubsection}{\numberline {19.6.2}Beispielaufgabe Floyd-Warshall}{90}{subsubsection.19.6.2}
+\contentsline {subsection}{\numberline {19.7}DAG: Directed Acyclic Graph}{91}{subsection.19.7}
+\contentsline {subsection}{\numberline {19.8}Topolgische Sortierung}{91}{subsection.19.8}
+\contentsline {subsubsection}{\numberline {19.8.1}Vorgehen}{92}{subsubsection.19.8.1}
+\contentsline {subsubsection}{\numberline {19.8.2}DAG Implementierung}{93}{subsubsection.19.8.2}
+\contentsline {section}{\numberline {20}Shortest Path Trees}{95}{section.20}
+\contentsline {subsection}{\numberline {20.1}Laufzeiten}{95}{subsection.20.1}
+\contentsline {subsection}{\numberline {20.2}Dijkstra Algorithmus}{96}{subsection.20.2}
+\contentsline {subsubsection}{\numberline {20.2.1}Vorgehen}{96}{subsubsection.20.2.1}
+\contentsline {subsection}{\numberline {20.3}Dijkstra Algorithmus}{97}{subsection.20.3}
+\contentsline {subsubsection}{\numberline {20.3.1}Dijkstra Distance Beispiel \IeC {\"U}bung}{98}{subsubsection.20.3.1}
+\contentsline {subsubsection}{\numberline {20.3.2}Implementierung}{99}{subsubsection.20.3.2}
+\contentsline {subsubsection}{\numberline {20.3.3}Implementierung Path Finder}{100}{subsubsection.20.3.3}
+\contentsline {subsection}{\numberline {20.4}Bellman-Ford}{101}{subsection.20.4}
+\contentsline {subsubsection}{\numberline {20.4.1}Dijkstra vs. Bellman-Ford}{101}{subsubsection.20.4.1}
+\contentsline {subsubsection}{\numberline {20.4.2}Implementierung}{102}{subsubsection.20.4.2}
+\contentsline {subsection}{\numberline {20.5}DAG basierter Algorithmus}{102}{subsection.20.5}
+\contentsline {section}{\numberline {21}Minimum Spanning Tree}{103}{section.21}
+\contentsline {subsection}{\numberline {21.1}Kruskal Algorithmus}{104}{subsection.21.1}
+\contentsline {subsubsection}{\numberline {21.1.1}Kruskal Implementierung}{105}{subsubsection.21.1.1}
+\contentsline {subsubsection}{\numberline {21.1.2}Repr\IeC {\"a}sentation einer Partition}{106}{subsubsection.21.1.2}
+\contentsline {subsection}{\numberline {21.2}SPT und MST}{106}{subsection.21.2}
+\contentsline {subsection}{\numberline {21.3}Prim-Jarnik's Algorithmus}{107}{subsection.21.3}
+\contentsline {subsubsection}{\numberline {21.3.1}Vorgehen}{107}{subsubsection.21.3.1}
+\contentsline {subsection}{\numberline {21.4}Bor\IeC {\r u}vka's Algorithmus}{108}{subsection.21.4}
+\contentsline {subsection}{\numberline {21.5}Laufzeit}{108}{subsection.21.5}
+\contentsline {section}{\numberline {A}Listings}{109}{appendix.A}
+\contentsline {section}{\numberline {B}Abbildungsverzeichnis}{110}{appendix.B}
+\contentsline {section}{\numberline {C}Tabellenverzeichnis}{112}{appendix.C}

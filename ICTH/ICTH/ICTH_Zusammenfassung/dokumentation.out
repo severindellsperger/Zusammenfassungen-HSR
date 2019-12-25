@@ -1,0 +1,70 @@
+\BOOKMARK [1][-]{section.1}{Teil Steffen}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Umrechnungen}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Signal-to-noise Ratio und Pegelplan}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Thermische Rauschleistung}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Pegelplan}{subsection.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.3}{Abtastung von Signalen}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.4}{Dauer und Bandbreite von Einzelpulsen}{section.1}% 7
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Vorgehen Amplitudendichte}{subsection.1.4}% 8
+\BOOKMARK [3][-]{subsubsection.1.4.2}{Energie berechnen}{subsection.1.4}% 9
+\BOOKMARK [3][-]{subsubsection.1.4.3}{Dauer eines Pulses berechnen}{subsection.1.4}% 10
+\BOOKMARK [3][-]{subsubsection.1.4.4}{Bandbreite}{subsection.1.4}% 11
+\BOOKMARK [3][-]{subsubsection.1.4.5}{Zeit-Bandbreitenprodukt}{subsection.1.4}% 12
+\BOOKMARK [2][-]{subsection.1.5}{Leitungscodes}{section.1}% 13
+\BOOKMARK [2][-]{subsection.1.6}{Modulationsarten}{section.1}% 14
+\BOOKMARK [3][-]{subsubsection.1.6.1}{Beispiel}{subsection.1.6}% 15
+\BOOKMARK [2][-]{subsection.1.7}{Tonh\366henverschiebung von Audiosignalen}{section.1}% 16
+\BOOKMARK [3][-]{subsubsection.1.7.1}{Mickey Mouse}{subsection.1.7}% 17
+\BOOKMARK [1][-]{section.2}{Teil Meili}{}% 18
+\BOOKMARK [2][-]{subsection.2.1}{Entscheidungsgehalt}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.2}{Entscheidungsfluss}{section.2}% 20
+\BOOKMARK [2][-]{subsection.2.3}{Ergebnis und Ergebnismenge}{section.2}% 21
+\BOOKMARK [2][-]{subsection.2.4}{Informationsgehalt}{section.2}% 22
+\BOOKMARK [2][-]{subsection.2.5}{Entropie}{section.2}% 23
+\BOOKMARK [2][-]{subsection.2.6}{Redundanz}{section.2}% 24
+\BOOKMARK [2][-]{subsection.2.7}{Kanalmodell}{section.2}% 25
+\BOOKMARK [3][-]{subsubsection.2.7.1}{Kanalmatrix}{subsection.2.7}% 26
+\BOOKMARK [3][-]{subsubsection.2.7.2}{Maximum-Likelihood Verfahren}{subsection.2.7}% 27
+\BOOKMARK [3][-]{subsubsection.2.7.3}{Transinformation}{subsection.2.7}% 28
+\BOOKMARK [3][-]{subsubsection.2.7.4}{Transinformation Berechnung}{subsection.2.7}% 29
+\BOOKMARK [3][-]{subsubsection.2.7.5}{\304quivokation \(Verlust\)}{subsection.2.7}% 30
+\BOOKMARK [3][-]{subsubsection.2.7.6}{Irrelevanz \(Rauschen\)}{subsection.2.7}% 31
+\BOOKMARK [3][-]{subsubsection.2.7.7}{Verbundentropie}{subsection.2.7}% 32
+\BOOKMARK [3][-]{subsubsection.2.7.8}{Bedingte Entropie}{subsection.2.7}% 33
+\BOOKMARK [3][-]{subsubsection.2.7.9}{Symbolrate Rmax}{subsection.2.7}% 34
+\BOOKMARK [2][-]{subsection.2.8}{Blockcodes}{section.2}% 35
+\BOOKMARK [3][-]{subsubsection.2.8.1}{Nachrichtenzahl}{subsection.2.8}% 36
+\BOOKMARK [3][-]{subsubsection.2.8.2}{Hamming Distanz}{subsection.2.8}% 37
+\BOOKMARK [3][-]{subsubsection.2.8.3}{Kontrollstellen f\374r Codewort ermitteln}{subsection.2.8}% 38
+\BOOKMARK [2][-]{subsection.2.9}{Hamming Codeblock aus Messwerten}{section.2}% 39
+\BOOKMARK [3][-]{subsubsection.2.9.1}{Fehlersyndrom ermitteln}{subsection.2.9}% 40
+\BOOKMARK [3][-]{subsubsection.2.9.2}{Anzahl der sicher erkennbaren Fehler}{subsection.2.9}% 41
+\BOOKMARK [3][-]{subsubsection.2.9.3}{Anzahl der sicher korrigierbaren Fehler}{subsection.2.9}% 42
+\BOOKMARK [3][-]{subsubsection.2.9.4}{Anzahl berechnen}{subsection.2.9}% 43
+\BOOKMARK [3][-]{subsubsection.2.9.5}{Dichtgepackt}{subsection.2.9}% 44
+\BOOKMARK [3][-]{subsubsection.2.9.6}{Blockcodes}{subsection.2.9}% 45
+\BOOKMARK [3][-]{subsubsection.2.9.7}{Hamming Code}{subsection.2.9}% 46
+\BOOKMARK [2][-]{subsection.2.10}{Zyklische Codes}{section.2}% 47
+\BOOKMARK [3][-]{subsubsection.2.10.1}{Kontrollstellen bestimmen}{subsection.2.10}% 48
+\BOOKMARK [3][-]{subsubsection.2.10.2}{Pr\374fen der Codebedingung}{subsection.2.10}% 49
+\BOOKMARK [3][-]{subsubsection.2.10.3}{Pr\374fmatrix}{subsection.2.10}% 50
+\BOOKMARK [3][-]{subsubsection.2.10.4}{CRC Code}{subsection.2.10}% 51
+\BOOKMARK [3][-]{subsubsection.2.10.5}{R\374ckgekoppeltes Schieberegister}{subsection.2.10}% 52
+\BOOKMARK [2][-]{subsection.2.11}{Faltungscodes}{section.2}% 53
+\BOOKMARK [3][-]{subsubsection.2.11.1}{Encoderged\344chtnis und Tailbits}{subsection.2.11}% 54
+\BOOKMARK [3][-]{subsubsection.2.11.2}{Blockcoderate}{subsection.2.11}% 55
+\BOOKMARK [3][-]{subsubsection.2.11.3}{Guter Code?}{subsection.2.11}% 56
+\BOOKMARK [3][-]{subsubsection.2.11.4}{Katastrophaler Code?}{subsection.2.11}% 57
+\BOOKMARK [3][-]{subsubsection.2.11.5}{Anzahl Bits f\374r Berechnung der Ausgangsbits}{subsection.2.11}% 58
+\BOOKMARK [3][-]{subsubsection.2.11.6}{Impulsantwort der Encoderschaltung}{subsection.2.11}% 59
+\BOOKMARK [3][-]{subsubsection.2.11.7}{Anzahl Zust\344nde}{subsection.2.11}% 60
+\BOOKMARK [2][-]{subsection.2.12}{Quellencodierung}{section.2}% 61
+\BOOKMARK [3][-]{subsubsection.2.12.1}{Mittlere Codewortl\344nge}{subsection.2.12}% 62
+\BOOKMARK [3][-]{subsubsection.2.12.2}{Shannon'sches Codierungstheorem}{subsection.2.12}% 63
+\BOOKMARK [3][-]{subsubsection.2.12.3}{Markov Diagramm}{subsection.2.12}% 64
+\BOOKMARK [3][-]{subsubsection.2.12.4}{Diskrete Quelle mit Ged\344chtnis}{subsection.2.12}% 65
+\BOOKMARK [2][-]{subsection.2.13}{Komprimierung}{section.2}% 66
+\BOOKMARK [3][-]{subsubsection.2.13.1}{Huffman-Codierung}{subsection.2.13}% 67
+\BOOKMARK [2][-]{subsection.2.14}{Kryptologie}{section.2}% 68
+\BOOKMARK [3][-]{subsubsection.2.14.1}{Caesar Chiffre}{subsection.2.14}% 69
+\BOOKMARK [3][-]{subsubsection.2.14.2}{RSA}{subsection.2.14}% 70

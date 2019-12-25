@@ -1,0 +1,11 @@
+\glossaryentry{CP : Control Plane?\glossentry{gls-cp}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{DP : Data Plane / Forwarding Plane?\glossentry{gls-dp}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{DTE : Data Terminal Equipment?\glossentry{gls-dte}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{DCE : Data Communication Equipment?\glossentry{gls-dce}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{DSLAM : Digital Subscriber Line Access Multiplexer?\glossentry{gls-dslam}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{IANA : Internet Assigned Numbers Authority?\glossentry{gls-iana}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{RIR : Regional Internet Registrar?\glossentry{gls-rir}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{RIPE : Réseaux IP Européens Network Coordination Centre?\glossentry{gls-ripe}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{ICANN : Internet Corporation for Assigned Names and Numbers?\glossentry{gls-icann}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{verbindungsorientierter Dienst?\glossentry{gls-cos}|setentrycounter[]{page}\glsnumberformat}{3}
+\glossaryentry{verbindungsloser Dienst?\glossentry{gls-cls}|setentrycounter[]{page}\glsnumberformat}{3}

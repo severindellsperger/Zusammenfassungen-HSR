@@ -1,0 +1,138 @@
+\BOOKMARK [1][-]{section.1}{Big Oh Laufzeitverhalten}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Laufzeiten}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Summenformel}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{n - 1 Iterationen}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Stirling Formel}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{\334bersicht Datenstrukturen}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Sortier- und Suchalgorithmen}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Multimaps}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Operationen}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Geordnete Multimap}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{B\344ume}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Terminologie}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Traversierung}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Laufzeit}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Implementierungen}{subsection.4.2}% 15
+\BOOKMARK [1][-]{section.5}{BST: Bin\344re Such B\344ume}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Speicherplatz, Laufzeiten}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Bin\344re Suche}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Operationen}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.4}{Bin\344re Sortierung}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.5}{Speicherverbrauch}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.6}{Implementierungen}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{AVL Tree}{}% 23
+\BOOKMARK [2][-]{subsection.6.1}{Laufzeiten}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.2}{Operationen}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.3}{Rotationen / Trinode Umstrukturierung}{section.6}% 26
+\BOOKMARK [3][-]{subsubsection.6.3.1}{Rechts rotieren \(einfach\)}{subsection.6.3}% 27
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Links rotieren \(einfach\)}{subsection.6.3}% 28
+\BOOKMARK [3][-]{subsubsection.6.3.3}{Rechts/Links Doppelrotation}{subsection.6.3}% 29
+\BOOKMARK [3][-]{subsubsection.6.3.4}{Links/Rechts Doppelrotation}{subsection.6.3}% 30
+\BOOKMARK [2][-]{subsection.6.4}{Cut/Link Restrukturierung}{section.6}% 31
+\BOOKMARK [2][-]{subsection.6.5}{Implementierung}{section.6}% 32
+\BOOKMARK [1][-]{section.7}{Splay Tree}{}% 33
+\BOOKMARK [2][-]{subsection.7.1}{Varianten}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.2}{Vorgehen}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.3}{Remove}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.4}{Splaying}{section.7}% 37
+\BOOKMARK [2][-]{subsection.7.5}{Laufzeiten}{section.7}% 38
+\BOOKMARK [1][-]{section.8}{Sortieralgorithmen}{}% 39
+\BOOKMARK [2][-]{subsection.8.1}{Eigenschaften}{section.8}% 40
+\BOOKMARK [2][-]{subsection.8.2}{Varianten}{section.8}% 41
+\BOOKMARK [2][-]{subsection.8.3}{Laufzeiten}{section.8}% 42
+\BOOKMARK [2][-]{subsection.8.4}{Lexikographische Sortierung}{section.8}% 43
+\BOOKMARK [1][-]{section.9}{Bubble Sort}{}% 44
+\BOOKMARK [2][-]{subsection.9.1}{Laufzeiten}{section.9}% 45
+\BOOKMARK [1][-]{section.10}{Merge Sort}{}% 46
+\BOOKMARK [2][-]{subsection.10.1}{Laufzeiten}{section.10}% 47
+\BOOKMARK [1][-]{section.11}{Quick Sort}{}% 48
+\BOOKMARK [2][-]{subsection.11.1}{Laufzeiten}{section.11}% 49
+\BOOKMARK [2][-]{subsection.11.2}{In Place Implementierung}{section.11}% 50
+\BOOKMARK [1][-]{section.12}{Bucket Sort}{}% 51
+\BOOKMARK [2][-]{subsection.12.1}{Laufzeiten}{section.12}% 52
+\BOOKMARK [2][-]{subsection.12.2}{Implementierung}{section.12}% 53
+\BOOKMARK [1][-]{section.13}{Radix Sort}{}% 54
+\BOOKMARK [2][-]{subsection.13.1}{Laufzeiten}{section.13}% 55
+\BOOKMARK [2][-]{subsection.13.2}{Radix Sort Algorithmen}{section.13}% 56
+\BOOKMARK [2][-]{subsection.13.3}{Beispiel}{section.13}% 57
+\BOOKMARK [2][-]{subsection.13.4}{Implementierung}{section.13}% 58
+\BOOKMARK [1][-]{section.14}{Pattern Matching}{}% 59
+\BOOKMARK [2][-]{subsection.14.1}{Laufzeiten}{section.14}% 60
+\BOOKMARK [2][-]{subsection.14.2}{Brute Force Algorithmus}{section.14}% 61
+\BOOKMARK [2][-]{subsection.14.3}{Boyer-Moore Algorithmus}{section.14}% 62
+\BOOKMARK [3][-]{subsubsection.14.3.1}{Last Occurence Funktion}{subsection.14.3}% 63
+\BOOKMARK [3][-]{subsubsection.14.3.2}{Vorgehen}{subsection.14.3}% 64
+\BOOKMARK [3][-]{subsubsection.14.3.3}{Algorithmus}{subsection.14.3}% 65
+\BOOKMARK [3][-]{subsubsection.14.3.4}{Implementierung}{subsection.14.3}% 66
+\BOOKMARK [2][-]{subsection.14.4}{KMP: Knuth-Morris-Pratt Algorithmus}{section.14}% 67
+\BOOKMARK [3][-]{subsubsection.14.4.1}{Fehl-Funktion}{subsection.14.4}% 68
+\BOOKMARK [3][-]{subsubsection.14.4.2}{Vorgehen}{subsection.14.4}% 69
+\BOOKMARK [3][-]{subsubsection.14.4.3}{Algorithmus}{subsection.14.4}% 70
+\BOOKMARK [3][-]{subsubsection.14.4.4}{Implementierung}{subsection.14.4}% 71
+\BOOKMARK [1][-]{section.15}{Tries}{}% 72
+\BOOKMARK [2][-]{subsection.15.1}{Standard Trie}{section.15}% 73
+\BOOKMARK [3][-]{subsubsection.15.1.1}{Vorgehen}{subsection.15.1}% 74
+\BOOKMARK [2][-]{subsection.15.2}{Komprimierter Trie}{section.15}% 75
+\BOOKMARK [2][-]{subsection.15.3}{Suffix Trie}{section.15}% 76
+\BOOKMARK [2][-]{subsection.15.4}{Laufzeitverhalten / Speicherplatz}{section.15}% 77
+\BOOKMARK [2][-]{subsection.15.5}{Implementierung}{section.15}% 78
+\BOOKMARK [1][-]{section.16}{Dynamische Programmierung}{}% 79
+\BOOKMARK [2][-]{subsection.16.1}{Rucksack Problem}{section.16}% 80
+\BOOKMARK [2][-]{subsection.16.2}{Voraussetzung Subprobleme}{section.16}% 81
+\BOOKMARK [2][-]{subsection.16.3}{Subsequenzen}{section.16}% 82
+\BOOKMARK [2][-]{subsection.16.4}{LCS: Longest Common Subsequence}{section.16}% 83
+\BOOKMARK [2][-]{subsection.16.5}{Vorgehen}{section.16}% 84
+\BOOKMARK [3][-]{subsubsection.16.5.1}{Implementierung}{subsection.16.5}% 85
+\BOOKMARK [1][-]{section.17}{Graphen}{}% 86
+\BOOKMARK [2][-]{subsection.17.1}{Terminologie}{section.17}% 87
+\BOOKMARK [3][-]{subsubsection.17.1.1}{Subgraphen}{subsection.17.1}% 88
+\BOOKMARK [3][-]{subsubsection.17.1.2}{Tree und Forest}{subsection.17.1}% 89
+\BOOKMARK [3][-]{subsubsection.17.1.3}{Pfad und Zyklen}{subsection.17.1}% 90
+\BOOKMARK [2][-]{subsection.17.2}{Kanten-Listen Struktur}{section.17}% 91
+\BOOKMARK [3][-]{subsubsection.17.2.1}{Kanten-Listen Struktur Implementierung}{subsection.17.2}% 92
+\BOOKMARK [2][-]{subsection.17.3}{Adjazenz-Listen Struktur}{section.17}% 93
+\BOOKMARK [2][-]{subsection.17.4}{Adjazenz-Matrix Struktur}{section.17}% 94
+\BOOKMARK [2][-]{subsection.17.5}{Laufzeiten}{section.17}% 95
+\BOOKMARK [2][-]{subsection.17.6}{Implementierung}{section.17}% 96
+\BOOKMARK [1][-]{section.18}{DFS und BFS}{}% 97
+\BOOKMARK [2][-]{subsection.18.1}{DFS: Depth First Search}{section.18}% 98
+\BOOKMARK [2][-]{subsection.18.2}{Implementierung DFS}{section.18}% 99
+\BOOKMARK [2][-]{subsection.18.3}{BFS: Breadth First Search}{section.18}% 100
+\BOOKMARK [2][-]{subsection.18.4}{DFS vs. BFS}{section.18}% 101
+\BOOKMARK [1][-]{section.19}{Gerichtete Graphen \(Directed Graphs, Digraph\)}{}% 102
+\BOOKMARK [2][-]{subsection.19.1}{Scheduling}{section.19}% 103
+\BOOKMARK [2][-]{subsection.19.2}{Laufzeiten}{section.19}% 104
+\BOOKMARK [2][-]{subsection.19.3}{Strong Connectivity}{section.19}% 105
+\BOOKMARK [2][-]{subsection.19.4}{DFS und BFS}{section.19}% 106
+\BOOKMARK [2][-]{subsection.19.5}{Transitiver Abschluss}{section.19}% 107
+\BOOKMARK [2][-]{subsection.19.6}{Floyd-Warshalls Algorithmus}{section.19}% 108
+\BOOKMARK [3][-]{subsubsection.19.6.1}{Vorgehen}{subsection.19.6}% 109
+\BOOKMARK [3][-]{subsubsection.19.6.2}{Beispielaufgabe Floyd-Warshall}{subsection.19.6}% 110
+\BOOKMARK [2][-]{subsection.19.7}{DAG: Directed Acyclic Graph}{section.19}% 111
+\BOOKMARK [2][-]{subsection.19.8}{Topolgische Sortierung}{section.19}% 112
+\BOOKMARK [3][-]{subsubsection.19.8.1}{Vorgehen}{subsection.19.8}% 113
+\BOOKMARK [3][-]{subsubsection.19.8.2}{DAG Implementierung}{subsection.19.8}% 114
+\BOOKMARK [1][-]{section.20}{Shortest Path Trees}{}% 115
+\BOOKMARK [2][-]{subsection.20.1}{Laufzeiten}{section.20}% 116
+\BOOKMARK [2][-]{subsection.20.2}{Dijkstra Algorithmus}{section.20}% 117
+\BOOKMARK [3][-]{subsubsection.20.2.1}{Vorgehen}{subsection.20.2}% 118
+\BOOKMARK [2][-]{subsection.20.3}{Dijkstra Algorithmus}{section.20}% 119
+\BOOKMARK [3][-]{subsubsection.20.3.1}{Dijkstra Distance Beispiel \334bung}{subsection.20.3}% 120
+\BOOKMARK [3][-]{subsubsection.20.3.2}{Implementierung}{subsection.20.3}% 121
+\BOOKMARK [3][-]{subsubsection.20.3.3}{Implementierung Path Finder}{subsection.20.3}% 122
+\BOOKMARK [2][-]{subsection.20.4}{Bellman-Ford}{section.20}% 123
+\BOOKMARK [3][-]{subsubsection.20.4.1}{Dijkstra vs. Bellman-Ford}{subsection.20.4}% 124
+\BOOKMARK [3][-]{subsubsection.20.4.2}{Implementierung}{subsection.20.4}% 125
+\BOOKMARK [2][-]{subsection.20.5}{DAG basierter Algorithmus}{section.20}% 126
+\BOOKMARK [1][-]{section.21}{Minimum Spanning Tree}{}% 127
+\BOOKMARK [2][-]{subsection.21.1}{Kruskal Algorithmus}{section.21}% 128
+\BOOKMARK [3][-]{subsubsection.21.1.1}{Kruskal Implementierung}{subsection.21.1}% 129
+\BOOKMARK [3][-]{subsubsection.21.1.2}{Repr\344sentation einer Partition}{subsection.21.1}% 130
+\BOOKMARK [2][-]{subsection.21.2}{SPT und MST}{section.21}% 131
+\BOOKMARK [2][-]{subsection.21.3}{Prim-Jarnik's Algorithmus}{section.21}% 132
+\BOOKMARK [3][-]{subsubsection.21.3.1}{Vorgehen}{subsection.21.3}% 133
+\BOOKMARK [2][-]{subsection.21.4}{Boruvka's Algorithmus}{section.21}% 134
+\BOOKMARK [2][-]{subsection.21.5}{Laufzeit}{section.21}% 135
+\BOOKMARK [1][-]{appendix.A}{Listings}{}% 136
+\BOOKMARK [1][-]{appendix.B}{Abbildungsverzeichnis}{}% 137
+\BOOKMARK [1][-]{appendix.C}{Tabellenverzeichnis}{}% 138

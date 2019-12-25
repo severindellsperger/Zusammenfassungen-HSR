@@ -1,0 +1,829 @@
+\input{./template.tex}
+
+% Dokumentinformationen
+\newcommand{\SUBJECT}{Codebeispiele}
+\newcommand{\TITLE}{C++}
+
+\input{./front.tex}
+
+\lstset{style=cevelop-style}
+
+\begin{document}
+\section{Drill questions}
+\includegraphics[keepaspectratio,width=\textwidth,height=\textheigh t]{images/1}
+\subsection{Element Iteration}
+\includegraphics[keepaspectratio,width=\textwidth,height=\textheigh t]{images/2}
+\section{Stack and Queue}
+\begin{lstlisting}[language=C++]
+#include <stack> 
+#include <queue> 
+#include <iostream> 
+#include <string> 
+
+int main() { 
+	std::stack<std::string> lifo{}; 
+	std::queue<std::string> fifo{}; 
+	for (std::string s : { "Fall", "leaves", "after", "leaves", "fall" }) { 
+		lifo.push(s); 
+		fifo.push(s); 
+	} 
+	while (!lifo.empty()) { // fall leaves after leaves Fall 
+		std::cout << lifo.top() << ' '; 
+		lifo.pop(); } std::cout << '\n'; 
+		while (!fifo.empty()) {// Fall leaves after leaves fall 
+			std::cout << fifo.front() << ' '; 
+			fifo.pop(); 
+		} 
+	} 
+}
+\end{lstlisting}
+\section{MAP}
+\subsection{counting word}
+\begin{lstlisting}[language=C++]
+#include <map>
+#include <iostream> 
+#include <string> 
+
+int main(){ 
+	std::map<std::string, size_t> words{}; 
+	std::string s{}; 
+	
+	while (std::cin >> s) { 
+	++words[s]; 
+	} 
+	for(auto const & p : words) { 
+	std::cout << p.first << " = "<< p.second << '\n'; 
+	} 
+}
+\end{lstlisting}
+\section{Istream and Ostream}
+\subsection{robust reading of an int value}
+\begin{lstlisting}[language=C++]
+int inputAge(std::istream & in) { 
+	while (in.good()) { 
+		std::string line{}; 
+		getline(in, line); 
+		std::istringstream is{line}; 
+		int age{-1}; 
+		if (is >> age) { 
+		return age; 
+		} 
+	} 
+	return -1; 
+}
+\end{lstlisting}
+\subsection{Implementing Read}
+\begin{lstlisting}[language=C++]
+class Date { 
+	int year, month, day; 
+public: 
+	std::istream & read(std::istream & is) { 
+			int year{-1}, month{-1}, day{-1}; 
+			char sep1, sep2; 
+			//read values 
+			is >> year >> sep1 >> month >> sep2 >> day; 
+		try { 
+			Date input{year, month, day}; 
+			//overwrite content of this object (copy-ctor) 
+			(*this) = input; 
+			//clear stream if read was ok 
+			is.clear(); 
+		} catch (std::out_of_range const & e) { 
+			//set failbit 
+			is.setstate(std::ios::failbit); 
+		} 
+		return is; 
+	} 
+}; 
+\end{lstlisting}
+\subsection{Implementing Print}
+Date.h
+\begin{lstlisting}[language=C++]
+#include <ostream> 
+
+class Date { 
+	int year, month, day; 
+public: 
+	std::ostream & print(std::ostream & os) const {
+	os << year << "/" << month << "/" << day;
+	return os; 
+   }
+}; 
+inline std::ostream & operator<<(std::ostream & os, Date const & date) {
+	return date.print(os);
+}  
+\end{lstlisting}
+Any.cpp
+\begin{lstlisting}[language=C++]
+#include "Date.h" 
+#include <iostream> 
+
+void foo() { 
+	std::cout << Date::myBirthday; 
+} 
+\end{lstlisting}
+
+
+\section{Count}
+\subsection{non-whitespace Chars}
+char.h
+\begin{lstlisting}[language=C++]
+#include <iosfwd>
+int charcount(std::istream &in);
+\end{lstlisting}
+char.cpp
+\begin{lstlisting}[language=C++]
+int charcount(std::istream &in){
+    std::string line{};
+    std::getline(input, line);
+    line.erase(remove(line.begin(), line.end(),' '),line.end()); 
+    return line.size();
+}
+\end{lstlisting}
+main.cpp
+\begin{lstlisting}[language=C++]
+#include <charc.h>
+#include <iostream>
+int main(){
+    std::cout << charc(std::cin) << '\n';
+}
+\end{lstlisting}
+without loop char.cpp
+\begin{lstlisting}[language=C++]
+int charcount(std::istream &in){
+  using initer = std::istream_iterator<char>;
+  return std::vector<char>{initer{in},initer{}}.size();
+}
+\end{lstlisting}
+\subsection{all Chars}
+header
+\begin{lstlisting}[language=C++]
+int allcharcount(std::istream &in){
+}
+\end{lstlisting}
+cpp
+\begin{lstlisting}[language=C++]
+void allcharc(std::istream & in, std::ostream & out) {
+	char c { };
+	int counter { 0 };
+	while (in.get() >> c && in.eof() == false) {
+		counter++;
+	}
+	out << counter;
+}
+\end{lstlisting}
+without loop cpp
+\begin{lstlisting}[language=C++]
+int allcharcount(std::istream &in){
+}
+void allcharc(std::istream & in, std::ostream & out) {
+	std::noskipws (in);
+	std::istream_iterator<char> input {in};
+	std::istream_iterator<char> eos{};
+	out << std::distance(input, eos);
+}
+\end{lstlisting}
+\subsection{Words}
+header
+\begin{lstlisting}[language=C++]
+int wordcount(std::istream &in){
+}
+\end{lstlisting}
+cpp
+\begin{lstlisting}[language=C++]
+void wc(std::istream & in, std::ostream & out) {
+	std::string word{};
+	int counter{0};
+	while (in >> word) {
+		counter++;
+	}
+	out << counter;
+}
+\end{lstlisting}
+\subsection{Lines}
+header
+\begin{lstlisting}[language=C++]
+int linecount(std::istream &in){
+}
+\end{lstlisting}
+cpp
+\begin{lstlisting}[language=C++]
+void lc(std::istream & in, std::ostream & out) {
+	std::string line{};
+	int counter{0};
+	while (!in.eof()) {
+	std::getline(in, line);
+	counter++;
+	}
+	out << counter;
+}
+\end{lstlisting}
+\section{Testat 1}
+\subsection{calc.cpp}
+\begin{lstlisting}[language=C++]
+#include "calc.h"
+#include <exception>
+#include <istream>
+int calc(int lhs, int rhs, char op) {
+	switch(op) {
+	    case '+' : return lhs + rhs;
+	    case '-' : return lhs - rhs;
+	    case '*' : return lhs * rhs;
+	    case '/' :
+	    case '%':
+			if(rhs == 0)
+			{
+				throw std::invalid_argument{"Modulo by zero"};
+			}
+			else
+			{
+				if(op ==  '/')
+				{
+					return lhs / rhs;
+				}
+				else
+				{
+					return lhs % rhs;
+				}
+			}
+	    default: throw std::invalid_argument{"Invalid Argument"};
+	}
+}
+int calc(std::istream& in)
+{
+	int lhs{}, rhs{};
+	char op{};
+	if(in >> lhs >> op >> rhs)
+	{
+		return calc(lhs, rhs, op);
+	}
+
+	throw std::invalid_argument{"Invalid Argument!"};
+}
+\end{lstlisting}
+\subsection{calc.h}
+\begin{lstlisting}[language=C++]
+#ifndef CALC_H_
+#define CALC_H_
+#include <iosfwd>
+
+int calc(int lhs, int rhs, char op);
+int calc(std::istream& in);
+
+#endif /* CALC_H_ */
+\end{lstlisting}
+\subsection{pocketcalculator.cpp}
+\begin{lstlisting}[language=C++]
+#include "pocketcalculator.h"
+#include "calc.h"
+#include "sevensegment.h"
+#include <iostream>
+#include <exception>
+#include <string>
+#include <sstream>
+
+const unsigned MAXDIGITLENGTH{8};
+
+void startCalculator(std::ostream &out, std::istream &in)
+{
+	std::string line{};
+	while(getline(in, line))
+	{
+	 std::istringstream argument{line};
+		try {
+			int result = calc(argument);
+			std::string digits = std::to_string(result);
+			if(digits.length() <= MAXDIGITLENGTH)
+			{
+				printLargeNumber(result, out);
+			}
+			else
+			{
+				throw std::length_error{"Too many digits"};
+			}
+		} catch (...) {
+			printErrorMessage(out);
+		}
+	}
+}
+\end{lstlisting}
+\subsection{pocketcalculator.h}
+\begin{lstlisting}[language=C++]
+#ifndef POCKETCALCULATOR_H_
+#define POCKETCALCULATOR_H_
+#include <iosfwd>
+
+void startCalculator(std::ostream &out, std::istream &in);
+
+#endif /* POCKETCALCULATOR_H_ */
+\end{lstlisting}
+\subsection{sevensegment.cpp}
+\begin{lstlisting}[language=C++]
+#include "sevensegment.h"
+#include <ostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+void printLargeNumber(int i, std::ostream &out)
+{	std::string number = std::to_string(i);
+	if(i > 0)
+	{
+			for(int line = 0; line < 5; line++)
+			{
+
+				std::for_each(number.begin(), number.end(), [&out, line](auto digit){
+					digit = digit - '0';
+					out << digitsvector.at(digit).at(line);
+				});
+				out << '\n';
+			}
+	}
+	else
+	{
+		for(int line = 0; line < 5; line++)
+				{
+
+					std::for_each(number.begin(), number.end(), [&out, line](auto symbol){
+						if(symbol == '-' )
+							{
+								out << minusvector.at(line);
+							}
+						else
+							{
+								symbol = symbol - '0';
+								out << digitsvector.at(symbol).at(line);
+							}
+
+					});
+					out << '\n';
+				}
+	}
+
+}
+void printErrorMessage(std::ostream &out)
+{
+	std::for_each(errorvector.begin(), errorvector.end(), [&out](auto line)
+			{
+				out << line << '\n';
+			});
+}
+void printLargeDigit(int i, std::ostream &out)
+{
+	std::vector<std::string> number = digitsvector.at(i);
+
+				std::for_each(std::begin(number), std::end(number), [&out](auto line) {
+					out << line << '\n';
+				});
+}
+\end{lstlisting}
+\subsection{sevensegment.h}
+\begin{lstlisting}[language=C++]
+#ifndef SEVENSEGMENT_H_
+#define SEVENSEGMENT_H_
+#include <iosfwd>
+#include <vector>
+#include <string>
+
+	const std::vector<std::vector<std::string>> digitsvector{
+		std::vector<std::string>{" - ", "| |", "   ", "| |", " - "},
+		std::vector<std::string>{"   ", " | ", "   ", " | ", "   "},
+		std::vector<std::string>{" - ", "  |", " - ", "|  ", " - "},
+		std::vector<std::string>{" - ", "  |", " - ", "  |", " - "},
+		std::vector<std::string>{"   ", "| |", " - ", "  |", "   "},
+		std::vector<std::string>{" - ", "|  ", " - ", "  |", " - "},
+		std::vector<std::string>{" - ", "|  ", " - ", "| |", " - "},
+		std::vector<std::string>{" - ", "  |", "   ", "  |", "   "},
+		std::vector<std::string>{" - ", "| |", " - ", "| |", " - "},
+		std::vector<std::string>{" - ", "| |", " - ", "  |", " - "}
+	};
+
+	const std::vector<std::string> errorvector
+	{
+
+		{" -             "},
+		{"|              "},
+		{" -  -  -  -  - "},
+		{"|  |  |  | ||  "},
+		{" -        -    "}
+	};
+
+	const std::vector<std::string> minusvector
+		{
+		{" "},
+		{" "},
+		{"-"},
+		{" "},
+		{" "}
+		};
+
+void printLargeDigit(int i, std::ostream &out);
+void  printLargeNumber(int i, std::ostream &out);
+void printErrorMessage(std::ostream &out);
+
+#endif /* SEVENSEGMENT_H_ */
+\end{lstlisting}
+\section{Testat 2}
+\subsection{word.h}
+\begin{lstlisting}[language=C++]
+#ifndef WORD_H_
+#define WORD_H_
+
+#include <algorithm>
+#include <iosfwd>
+#include <string>
+#include <cctype>
+#include <vector>
+
+namespace word {
+	class Word {
+		std::string word {};
+	public:
+		Word() noexcept = default;
+		explicit Word(std::string const &s);
+		std::istream & read(std::istream & is);
+		std::ostream & print(std::ostream & os) const;
+		bool operator==(Word const & rhs) const;
+		bool operator<(Word const & rhs) const;
+	private:
+		bool static isValidWord(std::string s);
+	};
+
+	std::istream & operator>>(std::istream & is, Word & word);
+	std::ostream & operator<<(std::ostream & os, Word const & word);
+	std::ostream & operator<<(std::ostream & os, std::vector<Word> const & l);
+
+	inline bool operator>(Word const & lhs, Word const & rhs) {
+		return rhs < lhs;
+	}
+	inline bool operator>=(Word const & lhs, Word const & rhs) {
+		return !(lhs < rhs);
+	}
+	inline bool operator<=(Word const & lhs, Word const & rhs) {
+		return !(rhs < lhs);
+	}
+	inline bool operator!=(Word const & lhs, Word const & rhs) {
+		return !(rhs == lhs);
+	}
+}
+
+#endif /* WORD_H_ */
+\end{lstlisting}
+\subsection{word.cpp}
+\begin{lstlisting}[language=C++]
+#include "word.h"
+
+#include <algorithm>
+
+#include <cctype>
+#include <iosfwd>
+#include <stdexcept>
+#include <string>
+#include <iterator>
+
+namespace word {
+Word::Word(std::string const &s) {
+	if (s.empty()) {
+		throw std::invalid_argument("Word cannot be initialized with an empty string!");
+	}
+	if (!isValidWord(s)) {
+		throw std::invalid_argument("Word must contain only alphanumeric chars!");
+	}
+	word = s;
+}
+
+bool Word::isValidWord(std::string s) {
+	return std::all_of(s.begin(), s.end(), [](char c) {return std::isalpha(c);});
+}
+
+std::istream & Word::read(std::istream & is) {
+	while (!isalpha(is.peek()) && !is.eof()) {
+		is.ignore();
+	}
+	std::string temp { };
+	while (isalpha(is.peek()) && !is.eof()) {
+		temp += is.get();
+	}
+	if (!temp.empty()) {
+		if (isValidWord(temp)) {
+			word.clear();
+			word = temp;
+			is.clear();
+		} else {
+			is.setstate(std::ios::failbit);
+		}
+	}
+	return is;
+}
+bool Word::operator==(Word const & rhs) const {
+
+	return std::equal(word.begin(), word.end(), rhs.word.begin(), rhs.word.end(), [](auto left, auto right)
+			{
+				return tolower(left) == tolower(right);
+			});
+}
+bool Word::operator<(Word const & rhs) const {
+	return std::lexicographical_compare(word.begin(), word.end(), rhs.word.begin(), rhs.word.end(), [](char a, char b) {
+		return tolower(a) < tolower(b);
+	});
+}
+
+std::ostream & Word::print(std::ostream & os) const {
+	os << word;
+	return os;
+}
+
+std::istream & operator>>(std::istream & is, Word & word) {
+	return word.read(is);
+}
+
+std::ostream & operator<<(std::ostream & os, Word const & word) {
+	return word.print(os);
+}
+}
+\end{lstlisting}
+\subsection{kwic.cpp}
+\begin{lstlisting}[language=C++]
+#include "kwic.h"
+#include "word.h"
+#include <iosfwd>
+#include <iterator>
+#include <ostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace word;
+
+namespace word {
+std::ostream & operator<<(std::ostream & os, std::vector<Word> const & l) {
+	std::copy(std::begin(l), std::end(l), std::ostream_iterator<Word>{os, " "});
+	return os;
+}
+}
+
+namespace kwic {
+	std::vector<std::vector<Word>> rotate(std::vector<std::vector<Word>> const & input) {
+		std::vector<std::vector<Word>> rotated {};
+		std::for_each(begin(input), end(input), [&](std::vector<Word> toRotate) {
+			for (auto it = begin(toRotate); it != end(toRotate); it++) {
+				std::vector<Word> rotatedLine { toRotate.size() };
+				std::rotate_copy(
+					std::begin(toRotate), it, std::end(toRotate),
+					std::begin(rotatedLine));
+				rotated.push_back(rotatedLine);
+			}
+		});
+		std::sort(rotated.begin(), rotated.end());
+		return rotated;
+	}
+	void kwic(std::istream & in, std::ostream & out) {
+		std::vector<std::vector<Word>> lines {};
+		std::string inputLine {};
+		while(std::getline(in, inputLine)) {
+			std::istringstream lineStream { inputLine };
+			std::istream_iterator<Word> wordIterator { lineStream }, eof {};
+			lines.push_back(std::vector<Word> { wordIterator, eof });
+		}
+		std::vector<std::vector<Word>> rotatedLines = rotate(lines);
+
+		std::copy(
+			std::begin(rotatedLines),
+			std::end(rotatedLines),
+			std::ostream_iterator<std::vector<Word>>(out, "\n"));
+
+//		std::for_each(begin(rotatedLines), end(rotatedLines), [&out](std::vector<Word> line) {
+//			//out << line << '\n';
+//		});
+	}
+}
+\end{lstlisting}
+\subsection{kwic.h}
+\begin{lstlisting}[language=C++]
+#ifndef KWIC_H_
+#define KWIC_H_
+#include <iosfwd>
+
+namespace kwic {
+	void kwic(std::istream & in, std::ostream & out);
+}
+
+#endif /* KWIC_H_ */
+\end{lstlisting}
+\section{Testat 3}
+\subsection{indexableSet.h}
+\begin{lstlisting}[language=C++]
+#ifndef SRC_INDEXABLESET_H_
+#define SRC_INDEXABLESET_H_
+
+#include <functional>
+#include <set>
+#include <iterator>
+#include <stdexcept>
+
+template<typename T, typename COMPARE = std::less<T>>
+struct indexableSet: std::set<T, COMPARE> {
+	using container = std::set<T,COMPARE>;
+	using container::container;
+	using const_reference = typename container::const_reference;
+
+public:
+	const_reference at(int index) const {
+		if (index < 0) {
+			index += this->size();
+		}
+		if (static_cast<unsigned>(index) >= this->size()) {
+			throw std::out_of_range { "index out of range!" };
+		}
+
+		return *std::next(this->begin(), index);
+	}
+
+	const_reference operator[](int index) const {
+		return at(index);
+	}
+
+	const_reference front() const {
+		return at(0);
+	}
+
+	const_reference back() const {
+		return at(-1);
+	}
+};
+#endif /* SRC_INDEXABLESET_H_ */
+\end{lstlisting}
+\subsection{Test.cpp}
+\begin{lstlisting}[language=C++]
+#include "cute.h"
+#include "ide_listener.h"
+#include "xml_listener.h"
+#include "cute_runner.h"
+#include "indexableSet.h"
+
+#include <functional>
+#include <iterator>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+
+void emptyContainerTest() {
+	indexableSet<int, std::less<int>> empty { };
+	ASSERT_EQUAL(0, empty.size());
+}
+
+void resultingSizeTest() {
+	std::vector<std::string> input { "Banana", "Apple", "Strawberry", "Ananas" };
+	indexableSet<std::string> const fruits { std::begin(input), std::end(input) };
+	ASSERT_EQUAL(4, fruits.size());
+}
+
+void ascendingOrderRangeConstructorTest() {
+	indexableSet<std::string> fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	std::vector<std::string> expected { "Ananas", "Apple", "Banana", "Strawberry" };
+	std::vector<std::string> actual { std::begin(fruits), std::end(fruits) };
+	ASSERT_EQUAL(expected, actual);
+}
+
+void descendingOrderRangeConstructorTest() {
+	indexableSet<std::string> fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	std::vector<std::string> expected { "Strawberry", "Banana", "Apple", "Ananas" };
+	std::vector<std::string> actual { std::rbegin(fruits), std::rend(fruits) };
+	ASSERT_EQUAL(expected, actual);
+}
+
+void copyConstructorTest() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	indexableSet<std::string> const copy { fruits };
+	ASSERT_EQUAL(4, copy.size());
+}
+
+void atTooLargeIndex() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_THROWS(fruits.at(4), std::out_of_range);
+}
+
+void atTooSmallIndex() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_THROWS(fruits.at(-8), std::out_of_range);
+}
+
+void initializerConstructorTest() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_EQUAL(4, fruits.size());
+}
+
+void atPositiveIndicesTest() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_EQUAL("Strawberry", fruits.at(3));
+}
+
+void atNegativeIndicesTest() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_EQUAL("Banana", fruits.at(-2));
+}
+
+void frontEmptyExceptionTest() {
+	indexableSet<std::string> const empty { };
+	ASSERT_THROWS(empty.front(), std::out_of_range);
+}
+
+void frontNotEmptyTest() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_EQUAL("Ananas", fruits.front());
+}
+
+void backEmptyExceptionTest() {
+	indexableSet<std::string> const empty { };
+	ASSERT_THROWS(empty.back(), std::out_of_range);
+}
+
+void backNotEmptyTest() {
+	indexableSet<std::string> const fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	ASSERT_EQUAL("Strawberry", fruits.back());
+}
+
+void iteratorOrderTest() {
+	indexableSet<std::string, std::greater<>> fruits { "Banana", "Apple", "Strawberry", "Ananas" };
+	std::vector<std::string> expected { "Strawberry", "Banana", "Apple", "Ananas" };
+	ASSERT_EQUAL_RANGES(std::begin(expected), std::end(expected), std::begin(fruits), std::end(fruits));
+}
+
+void returningByIndexAndValueTest() {
+	indexableSet<int> const values { 15 };
+	ASSERT_EQUAL(&values.at(0), &values[0]);
+}
+
+void FrontBackReferenceTest() {
+	indexableSet<int> const values { 15 };
+	ASSERT_EQUAL(&values.front(), &values.back());
+}
+
+struct caselessCompare {
+	bool operator()(std::string const &left, std::string const &right) const {
+		return std::lexicographical_compare(left.begin(), left.end(), right.begin(), right.end(), [](char c1, char c2)
+		{
+			return std::tolower(c1) < std::tolower(c2);
+		});
+	}
+};
+
+void caselessComparatorTest1() {
+	indexableSet<std::string, caselessCompare> set { "a", "B", "c" };
+	ASSERT_EQUAL("a", set[0]);
+}
+
+void caselessComparatorTest2() {
+	indexableSet<std::string, caselessCompare> set { "A", "B", "c" };
+	ASSERT_EQUAL("B", set[1]);
+}
+
+void caselessComparatorTest3() {
+	indexableSet<std::string, caselessCompare> set { "A", "B", "c" };
+	ASSERT_EQUAL("c", set[2]);
+}
+
+void caselessComparatorTest4() {
+	indexableSet<std::string, caselessCompare> set {"A", "a"};
+	ASSERT_EQUAL(1, set.size());
+}
+
+bool runAllTests(int argc, char const *argv[]) {
+	cute::suite s { };
+	//TODO add your test here
+	s.push_back(CUTE(emptyContainerTest));
+	s.push_back(CUTE(copyConstructorTest));
+	s.push_back(CUTE(resultingSizeTest));
+	s.push_back(CUTE(ascendingOrderRangeConstructorTest));
+	s.push_back(CUTE(atTooLargeIndex));
+	s.push_back(CUTE(atTooSmallIndex));
+	s.push_back(CUTE(initializerConstructorTest));
+	s.push_back(CUTE(descendingOrderRangeConstructorTest));
+	s.push_back(CUTE(frontNotEmptyTest));
+	s.push_back(CUTE(frontEmptyExceptionTest));
+	s.push_back(CUTE(backEmptyExceptionTest));
+	s.push_back(CUTE(backNotEmptyTest));
+	s.push_back(CUTE(atPositiveIndicesTest));
+	s.push_back(CUTE(atNegativeIndicesTest));
+	s.push_back(CUTE(iteratorOrderTest));
+	s.push_back(CUTE(returningByIndexAndValueTest));
+	s.push_back(CUTE(FrontBackReferenceTest));
+	s.push_back(CUTE(caselessComparatorTest1));
+	s.push_back(CUTE(caselessComparatorTest2));
+	s.push_back(CUTE(caselessComparatorTest3));
+	s.push_back(CUTE(caselessComparatorTest4));
+
+	cute::xml_file_opener xmlfile(argc, argv);
+	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
+	auto runner = cute::makeRunner(lis, argc, argv);
+	bool success = runner(s, "AllTests");
+	return success;
+}
+
+int main(int argc, char const *argv[]) {
+	return runAllTests(argc, argv) ? EXIT_SUCCESS : EXIT_FAILURE;
+}
+
+\end{lstlisting}
+\end{document}

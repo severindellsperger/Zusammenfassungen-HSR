@@ -1,0 +1,72 @@
+\babel@toc {ngerman}{}
+\contentsline {paragraph}{\nonumberline Lizenz}{1}{section*.1}
+\contentsline {section}{\numberline {1}Teil Steffen}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Umrechnungen}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Signal-to-noise Ratio und Pegelplan}{5}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Thermische Rauschleistung}{5}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Pegelplan}{6}{subsubsection.1.2.2}
+\contentsline {subsection}{\numberline {1.3}Abtastung von Signalen}{7}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Dauer und Bandbreite von Einzelpulsen}{7}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Vorgehen Amplitudendichte}{7}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Energie berechnen}{7}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}Dauer eines Pulses berechnen}{7}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}Bandbreite}{7}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}Zeit-Bandbreitenprodukt}{8}{subsubsection.1.4.5}
+\contentsline {subsection}{\numberline {1.5}Leitungscodes}{8}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Modulationsarten}{9}{subsection.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}Beispiel}{9}{subsubsection.1.6.1}
+\contentsline {subsection}{\numberline {1.7}Tonh\IeC {\"o}henverschiebung von Audiosignalen}{10}{subsection.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Mickey Mouse}{10}{subsubsection.1.7.1}
+\contentsline {section}{\numberline {2}Teil Meili}{11}{section.2}
+\contentsline {subsection}{\numberline {2.1}Entscheidungsgehalt}{11}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Entscheidungsfluss}{11}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Ergebnis und Ergebnismenge}{11}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Informationsgehalt}{11}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Entropie}{11}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Redundanz}{11}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Kanalmodell}{12}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Kanalmatrix}{13}{subsubsection.2.7.1}
+\contentsline {subsubsection}{\numberline {2.7.2}Maximum-Likelihood Verfahren}{14}{subsubsection.2.7.2}
+\contentsline {subsubsection}{\numberline {2.7.3}Transinformation}{15}{subsubsection.2.7.3}
+\contentsline {subsubsection}{\numberline {2.7.4}Transinformation Berechnung}{15}{subsubsection.2.7.4}
+\contentsline {subsubsection}{\numberline {2.7.5}\IeC {\"A}quivokation (Verlust)}{15}{subsubsection.2.7.5}
+\contentsline {subsubsection}{\numberline {2.7.6}Irrelevanz (Rauschen)}{15}{subsubsection.2.7.6}
+\contentsline {subsubsection}{\numberline {2.7.7}Verbundentropie}{16}{subsubsection.2.7.7}
+\contentsline {subsubsection}{\numberline {2.7.8}Bedingte Entropie}{16}{subsubsection.2.7.8}
+\contentsline {subsubsection}{\numberline {2.7.9}Symbolrate Rmax}{16}{subsubsection.2.7.9}
+\contentsline {subsection}{\numberline {2.8}Blockcodes}{17}{subsection.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}Nachrichtenzahl}{17}{subsubsection.2.8.1}
+\contentsline {subsubsection}{\numberline {2.8.2}Hamming Distanz}{17}{subsubsection.2.8.2}
+\contentsline {subsubsection}{\numberline {2.8.3}Kontrollstellen f\IeC {\"u}r Codewort ermitteln}{17}{subsubsection.2.8.3}
+\contentsline {subsection}{\numberline {2.9}Hamming Codeblock aus Messwerten}{18}{subsection.2.9}
+\contentsline {subsubsection}{\numberline {2.9.1}Fehlersyndrom ermitteln}{19}{subsubsection.2.9.1}
+\contentsline {subsubsection}{\numberline {2.9.2}Anzahl der sicher erkennbaren Fehler}{19}{subsubsection.2.9.2}
+\contentsline {subsubsection}{\numberline {2.9.3}Anzahl der sicher korrigierbaren Fehler}{19}{subsubsection.2.9.3}
+\contentsline {subsubsection}{\numberline {2.9.4}Anzahl berechnen}{19}{subsubsection.2.9.4}
+\contentsline {subsubsection}{\numberline {2.9.5}Dichtgepackt}{19}{subsubsection.2.9.5}
+\contentsline {subsubsection}{\numberline {2.9.6}Blockcodes}{19}{subsubsection.2.9.6}
+\contentsline {subsubsection}{\numberline {2.9.7}Hamming Code}{19}{subsubsection.2.9.7}
+\contentsline {subsection}{\numberline {2.10}Zyklische Codes}{20}{subsection.2.10}
+\contentsline {subsubsection}{\numberline {2.10.1}Kontrollstellen bestimmen}{20}{subsubsection.2.10.1}
+\contentsline {subsubsection}{\numberline {2.10.2}Pr\IeC {\"u}fen der Codebedingung}{21}{subsubsection.2.10.2}
+\contentsline {subsubsection}{\numberline {2.10.3}Pr\IeC {\"u}fmatrix}{21}{subsubsection.2.10.3}
+\contentsline {subsubsection}{\numberline {2.10.4}CRC Code}{22}{subsubsection.2.10.4}
+\contentsline {subsubsection}{\numberline {2.10.5}R\IeC {\"u}ckgekoppeltes Schieberegister}{22}{subsubsection.2.10.5}
+\contentsline {subsection}{\numberline {2.11}Faltungscodes}{23}{subsection.2.11}
+\contentsline {subsubsection}{\numberline {2.11.1}Encoderged\IeC {\"a}chtnis und Tailbits}{24}{subsubsection.2.11.1}
+\contentsline {subsubsection}{\numberline {2.11.2}Blockcoderate}{24}{subsubsection.2.11.2}
+\contentsline {subsubsection}{\numberline {2.11.3}Guter Code?}{24}{subsubsection.2.11.3}
+\contentsline {subsubsection}{\numberline {2.11.4}Katastrophaler Code?}{24}{subsubsection.2.11.4}
+\contentsline {subsubsection}{\numberline {2.11.5}Anzahl Bits f\IeC {\"u}r Berechnung der Ausgangsbits}{24}{subsubsection.2.11.5}
+\contentsline {subsubsection}{\numberline {2.11.6}Impulsantwort der Encoderschaltung}{24}{subsubsection.2.11.6}
+\contentsline {subsubsection}{\numberline {2.11.7}Anzahl Zust\IeC {\"a}nde}{24}{subsubsection.2.11.7}
+\contentsline {subsection}{\numberline {2.12}Quellencodierung}{25}{subsection.2.12}
+\contentsline {subsubsection}{\numberline {2.12.1}Mittlere Codewortl\IeC {\"a}nge}{25}{subsubsection.2.12.1}
+\contentsline {subsubsection}{\numberline {2.12.2}Shannon'sches Codierungstheorem}{25}{subsubsection.2.12.2}
+\contentsline {subsubsection}{\numberline {2.12.3}Markov Diagramm}{28}{subsubsection.2.12.3}
+\contentsline {subsubsection}{\numberline {2.12.4}Diskrete Quelle mit Ged\IeC {\"a}chtnis}{28}{subsubsection.2.12.4}
+\contentsline {subsection}{\numberline {2.13}Komprimierung}{29}{subsection.2.13}
+\contentsline {subsubsection}{\numberline {2.13.1}Huffman-Codierung}{29}{subsubsection.2.13.1}
+\contentsline {subsection}{\numberline {2.14}Kryptologie}{29}{subsection.2.14}
+\contentsline {subsubsection}{\numberline {2.14.1}Caesar Chiffre}{30}{subsubsection.2.14.1}
+\contentsline {subsubsection}{\numberline {2.14.2}RSA}{30}{subsubsection.2.14.2}

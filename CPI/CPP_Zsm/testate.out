@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{Drill questions}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Element Iteration}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Stack and Queue}{}% 3
+\BOOKMARK [1][-]{section.3}{MAP}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{counting word}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Istream and Ostream}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{robust reading of an int value}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Implementing Read}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Implementing Print}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Count}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{non-whitespace Chars}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{all Chars}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.3}{Words}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.4}{Lines}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Testat 1}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{calc.cpp}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.2}{calc.h}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.3}{pocketcalculator.cpp}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.4}{pocketcalculator.h}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.5}{sevensegment.cpp}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.6}{sevensegment.h}{section.6}% 21
+\BOOKMARK [1][-]{section.7}{Testat 2}{}% 22
+\BOOKMARK [2][-]{subsection.7.1}{word.h}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.2}{word.cpp}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.3}{kwic.cpp}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.4}{kwic.h}{section.7}% 26
+\BOOKMARK [1][-]{section.8}{Testat 3}{}% 27
+\BOOKMARK [2][-]{subsection.8.1}{indexableSet.h}{section.8}% 28
+\BOOKMARK [2][-]{subsection.8.2}{Test.cpp}{section.8}% 29
