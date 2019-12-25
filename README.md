@@ -1,2 +1,2 @@
 # Zusammenfassungen-HSR
-Zusammenfassungen aus meinem Studium.
+Zusammenfassungen, Cheatsheets und andere Unterlagen aus meinem Studium.
