@@ -1,0 +1,15 @@
+\textbf{Text Input Handling}
+\begin{lstlisting}
+private void LoginButton_Click(object sender, RoutedEventArgs e)
+{
+	UserName = MyLoginNameBox.Text;
+	Password = MyPasswordBox.Password;
+	if (string.IsNullOrWhiteSpace(UserName)){
+		MessageBox.Show("Please enter a user name");
+		return; // Dialogfenster NICHT schliessen 
+	}
+	if (string.IsNullOrWhiteSpace(Password)){
+		MessageBox.Show("Please enter a password");
+		return; // Dialogfenster NICHT schliessen
+	} DialogResult = true; }
+\end{lstlisting}

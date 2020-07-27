@@ -1,0 +1,172 @@
+\section{Architekturthemen}
+
+\subsection{Dependency Injection}
+\begin{itemize}
+    \item View-Models in einem X-Plattform-Projekt haben keinen Zugriff auf UI-Komponenten und können somit:
+    \begin{itemize}
+        \item keine Fenster öffnen
+        \item keine UI Events direkt behandeln
+        \item generell keine platformspezifischen Dinge erledigen
+    \end{itemize}
+    \item Um das dennoch zu machen $\Rightarrow$ Dependency Injection
+\end{itemize}
+
+Wie erreichen wir den Zugriff auf plattformspezifischen Code?
+\begin{enumerate}
+    \item Wir abstrahieren den Zugriff mittels Interface
+\begin{lstlisting}
+public interface INavigationService 
+{ 
+  void Show(string view, object vm); 
+} 
+\end{lstlisting}
+    \item Wir programmieren im ViewModel-Code gegen diese Interfaces
+\begin{lstlisting}
+public class AutoListVm : BindableBase {
+  // Service in Property speichern
+  public INavigationService NavigationService { get; }
+  //Service im Konstruktor übergeben
+  public AutoListVm(INavigationService navService) { 
+    // Service der Propery zuweisen
+    NavigationService = navService;
+  } 
+  public void ShowDetailView() {
+    // Service verwenden
+    NavigationService.Show("Auto", SelectedAuto); 
+} } 
+\end{lstlisting}
+    \item Wir implementieren im Plattform-Projekt für jedes abstrakte Interface einen konkreten Service
+\begin{lstlisting}
+// Service Klasse
+public class WpfNavigationService : INavigationService 
+{ 
+  public readonly Dictionary<string, Action<object>> WindowFactory = new Dictionary<string, Action<object>>(); 
+  
+  public WpfNavigationService() 
+  { 
+    WindowFactory.Add("AutoList", vm => AutoListWindow.Display(vm as AutoListVm)); 
+    WindowFactory.Add("Auto", vm => AutoWindow.Display(vm as AutoVm)); 
+    WindowFactory.Add("Customer", vm => CustomerWindow.Display(vm as CustomerVm)); 
+  } 
+  public void Show(string view, object vm) 
+  { 
+    var factoryAction = WindowFactory[view];
+    factoryAction(vm); 
+  } 
+} 
+\end{lstlisting}
+    \item Wir instanziieren die verwendeten Service im Startup-Code des Plattform-Projekts
+    \item Wir injizieren den ViewModels die beötigten Services (z.B via Konstruktor-Parameter)
+\begin{lstlisting}
+public partial class App : Application 
+{ 
+  public AppVm Vm { get; private set; } 
+  public INavigationService NavigationService { get; private set; } 
+  protected override void OnStartup(StartupEventArgs e) 
+  { 
+    base.OnStartup(e); 
+    NavigationService = new WpfNavigationService(); 
+    Vm = new AppVm(NavigationService); 
+    ... 
+  }
+} 
+\end{lstlisting}
+\end{enumerate}
+\paragraph{Verbesserungmöglichkeiten}
+Anstatt Magic-String wie etwa ''AutoList'' zu verwendet, können folgende bessere Wege verwendet werden:
+\begin{enumerate}
+    \item String-Konstanten 
+    \item Enums
+    \item Typ-Parameter (Generics)
+\end{enumerate}
+Die dritte Variante ist empfohlen:
+
+\begin{lstlisting}
+public interface INavigationService { void Show<T>(T vm); }
+
+public class WpfNavigationService : INavigationService { 
+  public readonly Dictionary<Type, Action<object>> WindowFactory = new Dictionary<Type, Action<object>>();
+  public WpfNavigationService() { 
+    WindowFactory.Add(typeof(AutoListVm), vm => AutoListWindow.Display(vm as AutoListVm)); WindowFactory.Add(typeof(AutoVm), vm => AutoWindow.Display(vm as AutoVm)); 
+    WindowFactory.Add(typeof(CustomerVm), vm => CustomerWindow.Display(vm as CustomerVm)); } 
+    public void Show<T>(T vm) {
+      var factoryAction = WindowFactory[typeof(T)];
+      factoryAction(vm);
+} } 
+\end{lstlisting}
+
+
+\paragraph{Vorteile / Nachteile}
+\begin{itemize}
+    \item[+]  Zwang zur ''Separation of Concerns'' 
+    \item[+] Konfigurierbare Lebensdauer von Objekten 
+    \item[+] Konfigurierbare Multiplizität von Objektinstanzen (z.B. Singleton, Object-Pool) 
+    \item[+] Flexiblere Testbarkeit (Mock-Services) 
+    \item[+] Einfacherer Austausch einer Service-Implementierung durch eine andere 
+    \item[-] Konfigurationsfehler fallen erst zur Laufzeit auf 
+    \item[-] (Scheinbar) höhere Komplexität 
+    \item[-] Mehr Code 
+    \item[-] Code wird (un)übersichtlicher
+    \item[-] Dadurch Code auch schwieriger zu debuggen
+\end{itemize}
+
+
+\subsection{Background Execution}
+Standardmässig laufen 2 Threads:
+\begin{description}
+    \item[UI-Thread] Event Handling, Layout Management
+    \item[Render-Thread] Zeichnen der Controls auf den Screen
+\end{description}
+\begin{itemize}
+    \item Fenster werden neu gezeichnet auch während einer ''Blockade''
+\end{itemize}
+
+\paragraph{Tasks}
+\begin{lstlisting}
+Task.Run(() =>
+{
+    // Anwendung im Background
+    // UI-Thread läuft parallel weiter
+});
+\end{lstlisting}
+
+\paragraph{Dispatcher}
+\\
+Synchron
+\begin{lstlisting}
+Dispatcher.Invoke(() =>
+{
+    // UI blockiert
+});
+\end{lstlisting}
+Asynchron
+\begin{lstlisting}
+Dispatcher.BeginInvoke(() =>
+{
+    // UI nicht blockiert
+});
+\end{lstlisting}
+
+
+\subsection{Background Operation}
+\begin{enumerate}
+    \item Visuelles Feedback geben (Spinner, Overlay, Popup)
+    \item Starten eines BG-Threads, Kontrolle geht gleich an UI Thread zurück
+    \item Bei Thread-Ende aus dem BG-Thread den UI-Thread irgendwie benachrichtigen
+\end{enumerate}
+\begin{lstlisting}
+public void CreateAsciiArtinBackgroundThread()
+{
+    Task.Run(() =>
+    {
+        // Berechnung läuft nun in einem Background Thread
+        CreateAsciiArt();
+        // am Schluss den Dispatcher nutzen, um eine abschliessende Aktion im UI-Thread auszuführen: 
+        Dispatcher.Invoke(() => { ... });
+    });
+}
+\end{lstlisting}
+
+
+
+

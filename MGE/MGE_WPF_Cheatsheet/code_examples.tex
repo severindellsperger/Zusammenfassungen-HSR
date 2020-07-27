@@ -1,0 +1,38 @@
+\paragraph{ColorSlider}
+\begin{lstlisting}
+// MainWindow.xaml
+ValueChanged="ColorSlider_ValueChanged"
+// MainWindow.xaml.cs
+private void ColorSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+{
+	var r = (byte)ColorR.Value;
+	var g = (byte)ColorG.Value;
+	var b = (byte)ColorB.Value;
+
+	TextR.Text = r.ToString();
+	TextG.Text = g.ToString();
+	TextB.Text = b.ToString();
+	
+	var color = Color.FromRgb(r,g,b);
+	ColorArea.Fill = new SolidColorBrush(color);
+	ColorLabel.Content = color.ToHexColor(false);
+}
+\end{lstlisting}
+\paragraph{Normal Click Event}
+\begin{lstlisting}[language=xml]
+<!-- MainWindow.xaml -->
+<StackPanel Margin="240,120,0,0">
+	<TextBlock Name="Greeting" Text="{Binding Greeting}" FontSize="48" FontFamily="Segoe UI Light"   Margin="0,0,0,40" />
+	<TextBlock Text="What's your name?" FontSize="16" FontFamily="Segoe UI Light" />
+	<StackPanel Orientation="Horizontal" Margin="0,20,0,20" >
+		<TextBox Name="NameInput" Text="{Binding Name}" Width="300" FontSize="16" 		 VerticalContentAlignment="Center" FontFamily="Segoe UI" BorderThickness="0" 		 HorizontalAlignment="Left" Margin="0,0,10,0"/>
+		<Button Name="SayHelloButton" Content="Say &quot;Hello&quot;" FontSize="16" FontFamily="Segoe UI Light" 	Background="#0065A3" BorderThickness="2" BorderBrush="White" Foreground="White" 	Padding="4" IsDefault="True" Click="SayHelloButton_Click" />
+	</StackPanel>
+</StackPanel>
+\end{lstlisting}
+\begin{lstlisting}
+// MainWindow.xaml.cs
+private void SayHelloButton_Click(object sender, RoutedEventArgs e){
+	Greeting.Text = $"Hello, {NameInput.Text}!";
+}
+\end{lstlisting}

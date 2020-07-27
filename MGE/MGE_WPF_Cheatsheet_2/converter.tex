@@ -1,0 +1,72 @@
+\textbf{Converter Example mit List Template}
+\begin{lstlisting}
+// Person.cs
+public class Person {
+    private bool _isDead;
+    public string Name { get; set; }
+    public bool IsDead {
+        get { return _isDead; }
+        set { _isDead = value; if (_isDead) { DeadTime = DateTime.Now; }}     }
+    public DateTime DeadTime { get; set; }
+    public bool IsAlive => !IsDead;
+    public Person() { }
+    public Person(string name, bool isDead){ Name = name; IsDead = isDead; }   }
+
+// DeadConverter.cs
+public class DeadConverter : IValueConverter {
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
+        if (!(value is DateTime)) { throw new NotSupportedException("Not Supported"); }
+        var d = (DateTime)value;
+        if (d == DateTime.MinValue) {return Brushes.Green;}else{return Brushes.Red;}
+    }
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
+        throw new NotImplementedException();
+    } }
+
+// MainWindow.xaml.cs
+public partial class MainWindow : Window {
+    public ObservableCollection<Person> Persons { get; set; }
+    public int AlivePersons => Persons?.Count(x => !x.IsDead) ?? 0;
+    public MainWindow() {
+        InitializeComponent();
+        InitItems();
+        DataContext = this;     }
+    private void InitItems() {
+        Persons = new ObservableCollection<Person>();
+        Persons.Add(new Person("Severin", false));
+        Persons.Add(new Person("Dominic", true));
+        Persons.Add(new Person("Sharon", false));
+        Persons.Add(new Person("Julian", false));    }  }
+\end{lstlisting}
+\begin{lstlisting}[language=xml]
+<Window.Resources>
+    <local:DeadConverter x:Key="DeadConverter" />
+    <BooleanToVisibilityConverter x:Key="MyVisibilityConverter"/>
+</Window.Resources>
+<DockPanel>
+    <TextBlock DockPanel.Dock="Bottom">
+        <TextBlock.Text>
+            <MultiBinding StringFormat="{}Lebende Personen: {0} / {1}">
+                <Binding Path="AlivePersons"></Binding>
+                <Binding Path="Persons.Count"></Binding>
+            </MultiBinding>
+        </TextBlock.Text>
+    </TextBlock>
+    <ListBox ItemsSource="{Binding Persons}">
+        <ListBox.ItemTemplate>
+            <DataTemplate DataType="local:Person">
+                <WrapPanel>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                    <TextBlock Text=" - "></TextBlock>
+                    <TextBlock Text="Alive"
+                               Visibility="{Binding IsAlive, Converter={StaticResource MyVisibilityConverter}}"
+                               Foreground="{Binding DeadTime, Converter={StaticResource DeadConverter}}"></TextBlock>
+                    <TextBlock Text="Is Dead"
+                               Visibility="{Binding IsDead, Converter={StaticResource MyVisibilityConverter}}"
+                               Foreground="{Binding DeadTime, Converter={StaticResource DeadConverter}}"></TextBlock>
+                </WrapPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+</DockPanel>
+\end{lstlisting}

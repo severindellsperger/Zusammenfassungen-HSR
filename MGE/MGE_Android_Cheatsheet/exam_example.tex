@@ -1,0 +1,68 @@
+\paragraph{Example Fragment and Communication}
+\begin{lstlisting}[language=xml]
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_container" />
+\end{lstlisting}
+\begin{lstlisting}
+public class CounterActivityWithFragment extends Activity implements CounterFragment.OnCountedListener {
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main_fragment);
+    FragmentManager fragmentManager = getFragmentManager();
+    FragmentTransaction fragmentTransaction =
+    fragmentManager.beginTransaction();
+    CounterFragment fragment = new CounterFragment();
+    fragmentTransaction.add(R.id.fragment, fragment);
+    fragmentTransaction.commit();
+ }
+ public void log(int counter) {
+    Log.d("CounterActivity", "Counter is at " + counter);
+ }
+ @Override
+ public void onCounted(int count) {
+    log(count);
+ }
+}
+\end{lstlisting}
+\begin{lstlisting}
+public class CounterFragment extends Fragment implements View.OnClickListener {
+ private TextView counter;
+ private View buttonInc;
+ private int count = 0;
+ private OnCountedListener parent;
+ public interface OnCountedListener {
+    void onCounted(int count);
+ }
+ @Override
+ public void onAttach(Activity activity) {
+    super.onAttach(activity);
+    if (!(activity instanceof OnCountedListener)) {
+      throw new AssertionError("Activity must implement OnCountedListener!");
+    }
+ parent = (OnCountedListener) activity;
+ }
+ @Override
+ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    View layout = inflater.inflate(R.layout.fragment_main, container, false);
+    counter = (TextView) layout.findViewById(R.id.counter);
+    buttonInc = layout.findViewById(R.id.buttonInc);
+    buttonInc.setOnClickListener(this);
+    View reset = layout.findViewById(R.id.buttonReset);
+    reset.setOnClickListener(this);
+    return layout;
+ }
+}
+ @Override
+ public void onClick(View v) {
+    if (v == buttonInc) {
+      ++count;
+    } else {
+      count = 0;
+    }
+ counter.setText(Integer.toString(count));
+ parent.onCounted(count);
+}
+\end{lstlisting}

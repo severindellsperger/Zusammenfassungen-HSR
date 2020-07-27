@@ -1,0 +1,52 @@
+\textbf{INotifyPropertyChanged}
+\begin{lstlisting}[language=java]
+// Clock.cs
+public class Clock:INotifyPropertyChanged
+{
+  private DateTime _time;
+  public DateTime Time {
+    get { return _time; }
+    set {
+      if (value != _time) {
+        _time = value;
+        OnPropertyChanged(nameof(Time));
+        OnPropertyChanged(nameof(TimeString));
+      } 
+    }
+  }
+  public string TimeString => Time.ToString("dd.MM.yyyy HH:mm:ss");
+  public Clock() {
+    Time = DateTime.Now;
+  }
+  public event PropertyChangedEventHandler PropertyChanged;
+  protected virtual void OnPropertyChanged(string propertyName = null) {
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+  }
+}
+
+//App.xaml.cs
+public partial class App : Application
+{
+  public DispatcherTimer Timer { get; set; }
+  public Clock Clock { get; set; }
+  protected override void OnStartup(StartupEventArgs e) {
+    Clock = new Clock();
+    Timer = new DispatcherTimer();
+    // Jede Sekunde das Tick-Event auslösen:
+    Timer.Interval = TimeSpan.FromSeconds(1);
+    Timer.Tick += (sender, args) => {
+      // Do something...
+      Clock.Time = DateTime.Now;
+    };
+    Timer.Start();
+    MainWindow = new MainWindow();
+    MainWindow.DataContext = Clock;
+    MainWindow.Show();
+  }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=xml]
+<!-- MainWindow.xaml -->
+<Label ... Content="{Binding TimeString}" />
+\end{lstlisting}

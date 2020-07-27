@@ -1,0 +1,33 @@
+\textbf{Dialog Window}
+\begin{lstlisting}
+// MainWindow.xaml
+private void Button_Click(object sender, RoutedEventArgs e){
+	var win = new DialogWindow();
+	var result = win.ShowDialog();
+	if (result == true) { 
+		Debug.WriteLine($"{win.LastName} {win.FirstName} ({win.BirthDate:dd.MM.yyyy})");
+		return; }
+}
+// DialogWindow.xaml
+public partial class DialogWindow : Window
+{
+	public string LastName { get; set; }
+	public string FirstName { get; set; }
+	public DateTime BirthDate { get; set; }
+	public CustomerWindow() { InitializeComponent(); }^
+	private void OkButton_Click(object sender, RoutedEventArgs e)
+	{
+		LastName = LastNameBox.Text;
+		FirstName = FirstNameBox.Text;
+		try {
+			BirthDate = DateTime.ParseExact(BirthDateBox.Text, "dd.MM.yyyy", CultureInfo.CurrentCulture);
+		}
+		catch (Exception) {
+			MessageBox.Show("Das Datumsformat stimmt nicht", "Fehler", MessageBoxButton.OK, 	MessageBoxImage.Error);
+			return;
+		}
+		DialogResult = true; 
+	}
+	private void CancelButton_Click(object sender, RoutedEventArgs e) { DialogResult = false; }
+}
+\end{lstlisting}

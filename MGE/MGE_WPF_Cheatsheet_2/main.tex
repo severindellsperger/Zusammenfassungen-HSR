@@ -1,0 +1,124 @@
+\documentclass[a4paper,landscape,8pt]{extarticle}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amsthm}
+\usepackage{ascii}
+\usepackage[adobe-utopia]{mathdesign}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+%Style imports
+\usepackage[inline]{enumitem}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\usepackage{fancyhdr}
+\usepackage{datetime}
+\usepackage[iso,german]{isodate}
+%Graphic imports
+\usepackage{tikz}
+\graphicspath{ {./img/} }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}%
+  {\z@}{1ex \@plus 1ex \@minus .2ex}{-1em}%
+  {\normalfont\normalsize\bfseries}%
+}
+\makeatother
+
+
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\input{resources/lstlisting.tex}
+\lstset{aboveskip=1pt,belowskip=3pt}
+\lstset{ %
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    language=java,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{black}\hookrightarrow\space}}
+}
+\algrenewcommand\algorithmicfunction{\textbf{algorithm}}
+\newcommand{\code}[1]{\texttt{#1}}
+\title{Mobile and GUI Engineering\\\large Android}
+\author{Julian Klaiber / Severin Dellsperger}
+\date{Herbstsemester 2019}
+\affil{Hochschule für Technik Rapperswil}
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols*}{3}
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\input{inotifypropertychanged.tex}
+%\input{normalclickevent.tex}
+\input{mvvm.tex}
+%\input{colorslider.tex}
+\input{dialogwindow.tex}
+\input{styles.tex}
+\input{converter.tex}
+\input{various.tex}
+
+
+
+\end{multicols*}
+\end{document}

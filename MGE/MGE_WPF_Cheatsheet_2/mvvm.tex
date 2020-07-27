@@ -1,0 +1,47 @@
+\textbf{MVVM}
+\begin{lstlisting}
+// MainWindow.xaml.cs
+public partial class MainWindow : Window {
+    public MainWindow() {
+        InitializeComponent();
+    }
+    private void ButtonBase_OnClick(object sender, RoutedEventArgs e) {
+        ConfirmBox.Display("Umfrage", "WPF Beliebtheitsumfrage", "Mögen Sie WPF und das Modul MGE?", "Nein", "Nein");
+    } }
+
+// ConfirmBoxVM.cs
+class ConfirmBoxVM
+{
+    public string WindowTitle { get; set; }
+    public string DialogText { get; set; }
+    public string DialogTitle { get; set; }
+    public string OkButtonText { get; set; } = "Ok";
+    public string CancelButtonText { get; set; } = "Abbrechen";
+}
+
+// ConfirmBox.xaml.cs
+public ConfirmBox(string windowTitle, string dialogTitle, string dialogText, string buttonOkText, string buttonCancelText) {
+    InitializeComponent();
+    var vm = new ConfirmBoxVM() {
+        WindowTitle = windowTitle,
+        DialogTitle = dialogTitle,
+        DialogText = dialogText,
+        OkButtonText = buttonOkText,
+        CancelButtonText = buttonCancelText
+    };
+    DataContext = vm;
+}
+private void Cancel_Click(object sender, RoutedEventArgs e) {
+    DialogResult = false;
+}
+private void Ok_Click(object sender, RoutedEventArgs e) {
+    DialogResult = true;
+}
+public static void Display (string winTitle, string title, string msg, string okBtnCaption = "Ok", string cancelBtnCaption = "Abbrechen") {
+    var win = new ConfirmBox(winTitle, title, msg, okBtnCaption, cancelBtnCaption);
+    var result = win.ShowDialog();
+    if (result != true) return; } }
+\end{lstlisting}
+\begin{lstlisting}[language=xaml]
+{Binding WindowTitle}
+\end{lstlisting}

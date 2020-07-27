@@ -1,0 +1,49 @@
+\textbf{Styles}
+\begin{lstlisting}
+<Window.Resources>
+	<!-- benannten Style als Basis benutzen -->
+	<Style x:Key="DefaultButtonStyle" TargetType="Button">
+		<Setter Property="BorderThickness" Value="4" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Background" Value="#aaa" />
+		<Setter Property="Foreground" Value="White" />
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="Margin" Value="2" />
+		<Setter Property="Padding" Value="10 5 10 5" />
+		<Setter Property="FontSize" Value="13" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<!-- ControlTemplate der Buttons überschreiben -->
+				<ControlTemplate TargetType="Button">
+					<Border BorderBrush="{TemplateBinding BorderBrush}" 
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<Grid Background="{TemplateBinding Background}" >
+							<ContentPresenter Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" />
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<!-- Hier definieren wir die Triggers auf Ebene Style -->
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="BorderBrush" Value="#80bbbbbb" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+	<!-- Den obigen benannten Style erben und auf alle Buttons anwenden -->
+	<Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}" />
+	<!-- Einen primären Style definieren, welcher eine Akzentfarbe verwendet -->
+	<Style x:Key="PrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+		<Setter Property="Background" Value="#0066a6" />
+	</Style>
+	<!-- für den Help Button einen zusätzlichen abgeleiteten und benannten Style definieren -->
+	<Style x:Key="MyHelpButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+		<Setter Property="Foreground" Value="Gray" />
+	</Style>
+	<SolidColorBrush x:Key="MyBackgroundColor" Color="Green" />
+</Window.Resources>
+
+<!-- Style anwenden vor Content! -->
+<Button Background="{StaticResource MyBackgroundcolor}" Style="{StaticResource PrimaryButtonStyle}">Speichern</Button>
+\end{lstlisting}

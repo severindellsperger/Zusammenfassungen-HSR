@@ -1,0 +1,70 @@
+\section{Patterns}
+\subsection{AdapterView}
+\textbf{1. Definieren/Einbinden der ListViews in einer Activity-XML Datei}
+\begin{lstlisting}[language=xml]
+<ListView
+  android:id="@+id/listView"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"/>
+\end{lstlisting}
+\textbf{2. Rowlayout definieren in res/layout/rowlayout.xml}
+\begin{lstlisting}[language=xml]
+<!-- Hier koennte ein Icon, CheckBox, etc. sein -->
+<TextView
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/list_text"
+  android:textAlignment="center"
+  android:text="Platzhalter" />
+\end{lstlisting}
+\textbf{3. Instanziieren des Adapters}
+\begin{lstlisting}[language=java]
+ArrayAdapter<String> myArrayAdapter =
+  new ArrayAdapter<>(
+   this, // Die aktuelle Umgebung (diese Activity)
+   R.layout.rowlayout, // Die ID des Zeilenlayouts (der XML-Layout Datei)
+   R.id.list_text,   // Die ID eines TextView-Elements im Zeilenlayout
+   names);  // Beispieldaten in einer ArrayList
+\end{lstlisting}
+\textbf{4. Verbinden des Adapters mit dem ListView}
+\begin{lstlisting}[language=java]
+ArrayList<String> names = new ArrayList<String>();
+names.add("Severin"); names.add("Julian"); names.add("Sharon");
+ListView myListView = (ListView) findViewById(R.id.listView);
+myListView.setAdapter(myArrayAdapter);
+\end{lstlisting}
+
+\subsection{Recycler View} 
+\begin{itemize}
+\item \textbf{Adapter:} Analog zu eigenem ArrayAdapter
+\item \textbf{ViewHolder:} Klasse welche die Views zwischenspeichert
+\item \textbf{LayoutManager:} Defaults für übliche Layouts (optional)
+\item \textbf{ItemDecorator:} Trennlinien oder andere Dekoratoren um die Elemente (optional)
+\item \textbf{ItemAnimator:} Animiert hinzufügen, entfernen und scrolling von Elementen (optional)
+\end{itemize}
+
+Die RecyclerView bemerkt Änderungen an den Daten nicht von selbst. Um eine Aktualisierung zu veranlassen:
+\begin{itemize}
+  \item \code{notifyDataSetChanged()} //Holzhammer-Methode --> Overkill wenn nur zwei Elemente geändert
+  \item \code{notifyItemChanged(positionToUpdate)}
+  \item \code{notifyItemInserted(insertPosition)}
+  \item \code{notifyItemRemoved(removePosition)}
+\end{itemize}
+Diese gibts auch noch in einer \code{notifyItemRange}-Variante
+
+% \paragraph{Swipe Refresh} Anstelle, dass unsere App sich selbst aktualisiert kann man das mit einem Swipe Refresh machen. Dafür braucht man eine Support Library.
+% \begin{lstlisting}[language=xml]
+% <android.support.v4.widget.SwipeRefreshLayout>
+%   <android.support.v7.widget.RecyclerView/>
+% </android.support.v4.widget.SwipeRefreshLayout>
+% \end{lstlisting}
+% \begin{lstlisting}[language=java]
+% final SwipeRefreshLayout swipe = 
+%   (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
+% swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+%   public void onRefresh() {
+%   /*...*/
+%   swipe.setRefreshing(false);
+%   }
+% });
+% \end{lstlisting}
